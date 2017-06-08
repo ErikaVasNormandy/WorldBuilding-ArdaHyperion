@@ -6,13 +6,17 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
   entry: APP_DIR + '/index.jsx',
-  output: {
+  output: 
+  {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
   
-   module : {
-    loaders : [
+  //////////webpack stuff
+  module : 
+  {
+    loaders : 
+    [
       {
         test : /\.jsx?/,
         include : APP_DIR,
@@ -20,9 +24,8 @@ var config = {
       }
     ]
   }
-  
-  
-  
 };
+
+
 
 module.exports = config;
