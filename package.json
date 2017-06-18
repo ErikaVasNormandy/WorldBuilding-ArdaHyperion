@@ -1,0 +1,24 @@
+{
+  "name": "crabbers-shanty",
+  "version": "1.0.0",
+  "repository": "",
+  "description": "",
+  "main": "./build/bundle.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Erika",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "typescript": "^2.3.4",
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.1.0",
+    "typescript": "^2.3.4",
+    "webpack": "^2.6.1"
+  }
+}
