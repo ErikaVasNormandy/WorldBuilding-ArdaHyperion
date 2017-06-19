@@ -2,35 +2,34 @@ import React from 'react';
 import {render} from 'react-dom';
 
 class SweetRoll extends React.Component {
+    
+    constructor(props){
+        super(props);
+        this.state = {itemCount : 1};
+        this.state = {items: "Lavendar Dumpling"};
+        this.Add = this.Add.bind(this);
+        this.Buy = this.Buy.bind(this);
+
+    }
+    
+    Add(){
+        let newInventoryCount = this.state.itemCount + 1;
+        this.setState({itemCount: newInventoryCount});
+    }
+    
+    Buy() {
+        let newItemArray = this.state.items + "horker stew";
+       // this.setState(this.state.items.push("Horker Stew"));
+       this.setState({items: newItemArray})
+    }
+    
+    
     render () {
          
-         return( <p>SweetRoll Component</p>);
+         return( <p>SweetRoll Component <span><div>Items = { this.state.itemCount } and {this.state.items}
+         
+         <span><button onClick = { this.Add }></button></span>
+         </div></span></p>);
     }
 }
 export default SweetRoll
-
-// class SweetRoll extends React.Component {
-//     constructor(props)
-//     {
-//         super(props);
-//         //props == pipes
-//         this.state = {likesCount: 0};
-//         this.onLike = this.onLike.bind(this)
-//     }
-    
-    
-//     onLike() {
-//         let newLikesCount = this.state.likesCount + 1;
-//         this.setState({likesCount: newLikesCount});
-//     }
-//     render() {
-//         return ( 
-//             <div>
-//             Likes: <span> {this.state.likesCount}</span>
-//             <div><button onClick={this.onLike}>Like Me</button></div>
-//             </div>
-//             );
-//     }
-// }
-
-// export default SweetRoll;
