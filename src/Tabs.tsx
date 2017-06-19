@@ -1,18 +1,24 @@
-import * as React from 'react';
+import * as React from 'react'
+import Tab from "./Tab";
 
-interface tabProps {
-    tabTitle: string;
-    tabContent: string;
-    /* timestamp? */
+interface TabsProps{
+    MenuName: string;
 }
 
-class Tab extends React.Component<tabProps, {}> {
+
+class Tabs extends React.Component<TabsProps, {}>{
     render() {
-        return(<div>
-        <h3>{this.props.tabTitle}</h3>
-        <p> {this.props.tabContent} </p>
-        </div>);
+        return(
+        <div>{this.props.MenuName} 
+         <ul>
+                <li><Tab tabTitle = "Main Subject" tabContent="Content" tabIsVisible = {false}/></li>
+        
+         </ul>
+         </div>
+        );
     }
-    
+
 }
-export default Tab;
+
+
+export default Tabs;

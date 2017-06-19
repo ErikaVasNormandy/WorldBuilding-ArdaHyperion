@@ -1,5 +1,5 @@
 import * as React from "react";
-import Tab from "./Tabs";
+import Tab from "./Tab";
 
 interface itemVariables {
     objectName: string;
@@ -16,9 +16,10 @@ class CustomItem extends React.Component<itemVariables, {}> {
             <h4>Type: {this.props.objectType}</h4> 
             <h4>Value: {this.props.objectValue}</h4>  
             
-            <Tab tabTitle = "arrayList Eventually" tabContent = "pull data"/>
             </div>);
     }
 }
 
 export default CustomItem;
+        //  <Tab tabTitle = "arrayList Eventually" tabContent = "pull data"/>
+
