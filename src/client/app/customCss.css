@@ -1,0 +1,8 @@
+divTab {    
+    background-color: teal;
+    
+}
+
+divTab:active{
+    background-color: red;
+}
