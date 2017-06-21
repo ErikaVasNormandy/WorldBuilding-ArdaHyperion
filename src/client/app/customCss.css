@@ -1,8 +1,7 @@
-divTab {    
-    background-color: teal;
-    
-}
+.hidden-check1 {
+  display: none;  
+  }
 
-divTab:active{
-    background-color: red;
+.hidden-check2 {
+  visibility: hidden;
 }

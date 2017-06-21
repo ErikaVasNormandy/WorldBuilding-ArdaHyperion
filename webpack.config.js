@@ -15,12 +15,18 @@ var config = {
   //////////webpack stuff
   module : 
   {
+    
     loaders : 
     [
       {
+        test: /\.css$/,
+        use: ['css-loader']
+      }, 
+      {
+        // test : /\.jsx?/,
         test : /\.jsx?/,
         include : APP_DIR,
-        loader : 'babel-loader'
+        loader : ['babel-loader']     
       }
     ]
   }
