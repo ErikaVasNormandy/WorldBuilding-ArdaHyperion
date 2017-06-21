@@ -3,43 +3,46 @@ import React from 'react';
 
 
 class tabContent extends React.Component{
-    constructor(props){
-        super(props);
-    }
+   
     render(){
-        return( <div>Honeyside</div>)
+        return( <div>HoneysideHoneysideHoneysideHoneysideHoneysideHoneysideHoneysideHoneysideHoneysideHoneysideHoneyside</div>)
     }
 };
 
 
 
 class IndividualTab extends React.Component{
-    constructor() {
-        super();
-         this.setState({contentVisible: false});
-         this.onClick = this.onClick.bind(this);
-    
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this)
+         this.state = {
+             contentVisible: false
+         }
+     
     }
   
-    
+     onClick() {
+        this.setState({contentVisible: !this.state.contentVisible});
+        console.log(this.state.contentVisible);
+    }
    
     render(){
         return(<div>
-                    <div>
-                        <button onClick={() => this.onClick()}>Honeystrand Cave </button>
-                    </div>
-                
-                 {this.contentVisible ? <tabContent /> : null}
+                <div onClick={() => this.onClick()}>
+            
+                {this.props.tabTitle}
+                </div>
+                {
+                    this.state.contentVisible 
+                    ? <tabContent /> 
+                    : null
+                }
                 </div>
             )
     }
     
     
-     onClick(props) {
-        this.setState({contentVisible: !this.props.contentVisible});
-        console.log(this.props.contentVisible);
-    }
- 
     
-}
+
+};
 export default IndividualTab;
