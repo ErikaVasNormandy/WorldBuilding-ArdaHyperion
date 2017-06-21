@@ -23,7 +23,7 @@ class IndividualTab extends React.Component{
     return <div>
     	<div>
       	<label>{this.props.tabTitle}</label>
-        <input type="button" className="notVisible" isVisible={ this.state.isVisible } onClick={ this.handleClick } />
+        <button className="notVisible" onClick={ this.handleClick } />
       </div>      
       
       
