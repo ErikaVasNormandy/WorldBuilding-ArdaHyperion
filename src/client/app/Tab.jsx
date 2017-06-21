@@ -6,29 +6,29 @@ class IndividualTab extends React.Component{
   constructor(props) {
   	super(props);
     
-    this.state = { checked: false, };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = { isVisible: false, tabTitle: "Default Tab Title"};
+    this.handleClick = this.handleClick.bind(this);
   }  
   
-  handleChange() {
+  handleClick() {
   	this.setState({
-    	checked: !this.state.checked      
+    	isVisible: !this.state.isVisible      
     })
   }
   
   
   render() {
-  	const togglecheck1 = this.state.checked ? 'hidden-check1' : '';
+  	const toggleVisibility = this.state.isVisible ? 'hidden' : '';
 
     return <div>
     	<div>
-      	<label>Check 1</label>
-        <input type="checkbox" id="chk1" className="chk11" checked={ this.state.checked } onChange={ this.handleChange } />
+      	<label>{this.props.tabTitle}</label>
+        <input type="button" className="notVisible" isVisible={ this.state.isVisible } onClick={ this.handleClick } />
       </div>      
       
       
       
-      <div className={ togglecheck1 }>show hide div with check 1</div>
+      <div className={ toggleVisibility }>show hide div with check 1</div>
     </div>;
   }
 }

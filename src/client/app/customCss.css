@@ -1,7 +1,5 @@
-.hidden-check1 {
-  display: none;  
+.hidden {
+  visibility: hidden;  
   }
 
-.hidden-check2 {
-  visibility: hidden;
-}
+
