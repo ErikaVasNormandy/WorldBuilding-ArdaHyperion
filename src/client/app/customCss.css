@@ -1,3 +1,28 @@
+body
+		{
+			background-color:#000000;
+			background-image: radial-gradient(rgba(0,0,0,.2), rgba(1,0,0, 1)), url(https://s3-us-west-1.amazonaws.com/scavengers-repo.com/images/AutumnMoodBoard/960.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+			white-space:inherit;
+			font-size:1vw;
+				text-overflow: ellipsis;
+			color: white;
+  }
+
+
+li {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	text-align: right;
+	list-style-type: none;
+	font-size: 1vw;
+	display: block;
+}
+
 .hidden {
   visibility: hidden;  
   }
