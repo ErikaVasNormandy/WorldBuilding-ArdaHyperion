@@ -1,0 +1,26 @@
+{
+  "name": "honeyside",
+  "version": "0.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "server.js",
+  "author": "",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack -d",
+    "dev": "./node_modules/.bin/webpack -d --watch"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.4"
+  }
+}
