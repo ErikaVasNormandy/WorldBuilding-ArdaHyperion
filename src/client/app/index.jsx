@@ -3,19 +3,29 @@ import {render} from 'react-dom';
 import styles from './customCss.css';
 import Tab from './Tab.jsx';
 
+import ToggleDisplay from 'react-toggle-display';
+
 
  const materialsArray = [
       {name: "A", titleMaterials: "blah"}, 
       {name: "B", titleMaterials: "blah"}, 
       {name: "C", titleMaterials: "blah"}
       ];
-
-
+ 
+ const divStyle = {
+          color: 'blue',
+            
+            };
 class App extends React.Component{
   
   constructor(props){
     super(props);
+    
+    this.state = {isVisible: false, show: false}
+    
+
     this.handleClick = this.handleClick.bind(this);
+    this.createList = this.createList.bind(this);
   }
   
     componentWillMount(){
@@ -24,36 +34,47 @@ class App extends React.Component{
       this.setState({materialsArray})
   }
   
-
   
+  handleClick(numInput) {
+    // var x = document.getElementById(numInput).id;
+    //   var x = document.getElementById(numInput).style
+    // this.setState({	isVisible: !this.state.isVisible, x: divStyle })   
+    // console.log(this.state.isVisible)
+
+      this.setState({show: !this.state.show})  
+
+  }
+  createList(){
+    return materialsArray.map(item => 
+      {
+        
+        const toggleVisibility = this.state.isVisible ? 'nonActiveTab' : 'activeTab';
+
+       
+        return <div>
+        <button onClick = {() => this.handleClick(item.name)}>Press to display: {item.name}</button>
+         
+         <ToggleDisplay show={this.state.show}>
+         <div id = {item.name} key = {item.name}><Tab tabTitle = {item.name} tabContent = {item.titleMaterials}/></div>
+         </ToggleDisplay>
+         
+         
+          </div>
+        
+      }
+    )
   
-  handleClick(numInput){
-
-    return function(){
-      console.log(numInput);
-      
-      
-    }
-
-
   }
   
   render()
   {
-   
-    var cycleThroughTheList = materialsArray.map((item) =>
-              <div>
-                
-                <button className = "buttonclass" onClick = { this.handleClick(item.name) }> Change </button>
-                <div className = "nonActiveTab">
-                  <li key = {item.name}><Tab tabTitle = {item.name} tabContent = {item.titleMaterials}/></li>
-                </div>
-              </div>
+    return(<div>
+            <ul class = "MainMenu">
+              <li class = "MenuItem"><Tab tabTitle="Comprehensive" tabContent = "some content" /></li>
+              <li class = "MenuItem"><Tab tabTitle="Comprehensive" tabContent = "some content" /></li>
+              <li class = "MenuItem"><Tab tabTitle="Comprehensive" tabContent = "some content" /></li>
+            </ul>
               
-              )
-  
-    return(<div>"app"
-              <ul>{cycleThroughTheList}</ul>
             </div>)
   }
 }
