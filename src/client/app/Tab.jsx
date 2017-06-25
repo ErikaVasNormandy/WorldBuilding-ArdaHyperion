@@ -27,8 +27,10 @@ class Tab extends React.Component{
     render(){
         return(<div>
                  <button className = "MenuItem" onClick={ () => this.handleClick() }>Toggle things</button>
-                 <ToggleDisplay show={this.state.show}>
-                    <div>
+                
+                 
+                 <ToggleDisplay show={this.state.show} >
+                    <div className = "contentContainer">
                         <h5>{this.props.tabTitle}</h5>
                         <p>{this.props.tabContent}</p>
                     </div>
