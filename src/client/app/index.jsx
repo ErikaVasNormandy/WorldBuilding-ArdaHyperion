@@ -1,52 +1,61 @@
 import React from 'react';
 import {render} from 'react-dom';
 import styles from './customCss.css';
+import Tab from './Tab.jsx';
 
+
+ const materialsArray = [
+      {name: "A", titleMaterials: "blah"}, 
+      {name: "B", titleMaterials: "blah"}, 
+      {name: "C", titleMaterials: "blah"}
+      ];
+
+
+class App extends React.Component{
   
-  var itemDictionary = [
-              {name: "Almond Butter", price: 13, location: "Farmer's Market"},
-              {name: "Coffee", price: 12, location: "Farmer's Market"}
-          ];
-     
-class App extends React.Component {
   constructor(props){
     super(props);
-    this.state= {isVisible: false}
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(){
-    this.setState({
-      isVisible: !this.state.isVisible
-    })
-    console.log(this.state.isVisible)
-  }
-// getInitialState() {
-//   return({itemDictionary: []})
-// }
   
-     
-  render() {
-    const toggleVisibility = this.state.isVisible ? 'nonActiveTab': '';
-    var listItems = this.props.itemDictionary.map(function(item) {
-      return(
+    componentWillMount(){
+      let materialsArray;
+  // materialsArray = [{titleInput: "", titleMaterials : ""}]
+      this.setState({materialsArray})
+  }
+  
+
+  
+  
+  handleClick(numInput){
+
+    return function(){
+      console.log(numInput);
       
-      <li class= "menuItem" key = {item.name} className = {toggleVisibility} >
-                <p>{item.name} ........................ {item.price}</p>
-              </li>);
-    });
       
-      
-    return(<div>
-              Materials:
-             <button className = "ComprehensiveTab" onClick = {this.handleClick}>Comprehensive</button> 
-                <ul class = "mainmenu, materials">{listItems}</ul>
-             <button className = "GroceryTab" onClick = {this.handleClick}>Comprehensive</button> 
-                <ul class = "mainmenu, materials">{listItems}</ul>
-           
-         
-          </div> );
+    }
+
+
+  }
+  
+  render()
+  {
+   
+    var cycleThroughTheList = materialsArray.map((item) =>
+              <div>
+                
+                <button className = "buttonclass" onClick = { this.handleClick(item.name) }> Change </button>
+                <div className = "nonActiveTab">
+                  <li key = {item.name}><Tab tabTitle = {item.name} tabContent = {item.titleMaterials}/></li>
+                </div>
+              </div>
+              
+              )
+  
+    return(<div>"app"
+              <ul>{cycleThroughTheList}</ul>
+            </div>)
   }
 }
-
-
-render(<App itemDictionary = {itemDictionary}/>, document.getElementById('app'));
+  
+render(<App materialsArray = {materialsArray}/>, document.getElementById('app'));

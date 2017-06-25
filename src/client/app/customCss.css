@@ -43,3 +43,6 @@ h1{
 .nonActiveTab{
     visibility: hidden;
 }
+p{
+    text-indent: 4%;
+}
