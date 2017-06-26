@@ -46,3 +46,10 @@ p{
     text-indent: 4%;
 }
 
+.dormantTab{
+    display: none;
+}
+.activeTab{
+    display: inline;
+}
+
